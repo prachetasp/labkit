@@ -17,6 +17,7 @@ ln -s /usr/local/bin/emacs /Applications
 rm -rf ~/.emacs.d
 git clone git@github.com:epxlabs/emacs-live.git ~/.emacs.d
 cd ~/.emacs.d
+git checkout epxlabs-master
 git submodule init
 git submodule update
 
