@@ -15,6 +15,7 @@ brew install git
 brew install —with-cocoa emacs
 ln -s /usr/local/bin/emacs /Applications
 rm -rf ~/.emacs.d
+# Make sure your Github account has an SSH key generated and associated or the next line will not work
 git clone git@github.com:epxlabs/emacs-live.git ~/.emacs.d
 cd ~/.emacs.d
 git checkout epxlabs-master
