@@ -78,3 +78,6 @@ lein
 
 # Install AWS CLI
 brew install awscli
+
+# OPTIONAL: UNCOMMENT IF YOU'D LIKE TO HAVE HTOP
+# brew install htop
