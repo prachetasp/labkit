@@ -6,13 +6,13 @@ open googlechrome.dmg
 sudo cp -r /Volumes/Google\ Chrome/Google\ Chrome.app /Applications/
 
 #This will run an Xcode installer as well as homebrew
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)”
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 # Installs Git
 brew install git
 
 # Installs emacs
-brew install —with-cocoa emacs
+brew install --with-cocoa emacs
 ln -s /usr/local/bin/emacs /Applications
 rm -rf ~/.emacs.d
 git clone git@github.com:epxlabs/emacs-live.git ~/.emacs.d
@@ -31,12 +31,11 @@ echo "/usr/local/bin/zsh" | sudo tee -a /etc/shells
 chsh -s /usr/local/bin/zsh
 
 # Install oh-my-zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)”
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 # Install cmd line coloration for oh-my-zsh
 git clone git@github.com:zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/plugins/zsh-syntax-highlighting
-# Below doesn’t work - should spend more time on it
-#sed -i ‘’ ’s/plugins=(git)/plugins=(git zsh-syntax-highlighting)/g’ ~/.zshrc
+sed -i.bu 's/plugins=(git)/plugins=(git zsh-syntax-highlighting)/' ~/.zshrc
 
 # Install brew cask & iterm2
 brew tap caskroom/homebrew-cask
@@ -64,7 +63,12 @@ rbenv global 2.3.0
 sudo gem install bundler
 
 # Install Java
-# Unfortunately you have to go to their site http://www.oracle.com/technetwork/java/javase/downloads/index.html
+wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u101-b13/jdk-8u101-macosx-x64.dmg -O /tmp/jdk.dmg
+sudo hdiutil attach /tmp/jdk.dmg
+# if next command does not work check correct target with
+# sudo installer -pkg /Volumes/JDK\ 8\ Update\ 101\ 1/JDK\ 8\ Update\ 101.pkg -dominfo
+sudo installer -pkg /Volumes/JDK\ 8\ Update\ 101\ 1/JDK\ 8\ Update\ 101.pkg -target LocalSystem
+sudo hdiutil detach /Volumes/JDK\ 8\ Update\ 101\ 1
 
 # Install leiningen
 cd /usr/local/bin
