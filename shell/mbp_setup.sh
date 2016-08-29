@@ -20,6 +20,7 @@ git clone git@github.com:epxlabs/emacs-live.git ~/.emacs.d
 cd ~/.emacs.d
 git checkout epxlabs-master
 git submodule init
+#**update causes error for power-pack/vendor/submodules/undo-tree
 git submodule update
 
 # Show hidden files and folders in Finder
@@ -63,13 +64,16 @@ rbenv install 2.3.0
 rbenv global 2.3.0
 sudo gem install bundler
 
+# **Install wget
+brew install wget
+
 # Install Java
 wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u101-b13/jdk-8u101-macosx-x64.dmg -O /tmp/jdk.dmg
 sudo hdiutil attach /tmp/jdk.dmg
 # if next command does not work check correct target with
-# sudo installer -pkg /Volumes/JDK\ 8\ Update\ 101\ 1/JDK\ 8\ Update\ 101.pkg -dominfo
-sudo installer -pkg /Volumes/JDK\ 8\ Update\ 101\ 1/JDK\ 8\ Update\ 101.pkg -target LocalSystem
-sudo hdiutil detach /Volumes/JDK\ 8\ Update\ 101\ 1
+# **(should work)sudo installer -pkg /Volumes/JDK\ 8\ Update\ 101\ 1/JDK\ 8\ Update\ 101.pkg -dominfo
+sudo installer -pkg /Volumes/JDK\ 8\ Update\ 101/JDK\ 8\ Update\ 101.pkg -target LocalSystem
+sudo hdiutil detach /Volumes/JDK\ 8\ Update\ 101
 
 # Install leiningen
 cd /usr/local/bin
