@@ -84,5 +84,11 @@ lein
 # Install AWS CLI
 brew install awscli
 
+# Add profiles file to your lein directory
+cd ~/.lein
+touch profiles.clj
+# replace contents of file with file found here: https://github.com/epxlabs/labkit/blob/master/.lein/profiles.clj
+
+
 # OPTIONAL: UNCOMMENT IF YOU'D LIKE TO HAVE HTOP
 # brew install htop
