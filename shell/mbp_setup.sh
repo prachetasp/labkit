@@ -85,9 +85,7 @@ lein
 brew install awscli
 
 # Add profiles file to your lein directory
-cd ~/.lein
-touch profiles.clj
-# replace contents of file with file found here: https://github.com/epxlabs/labkit/blob/master/.lein/profiles.clj
+git clone https://github.com/epxlabs/labkit/blob/master/.lein/profiles.clj ~/.lein
 
 
 # OPTIONAL: UNCOMMENT IF YOU'D LIKE TO HAVE HTOP
