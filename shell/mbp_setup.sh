@@ -13,7 +13,7 @@ brew install git
 
 # Installs emacs
 brew install --with-cocoa emacs
-ln -s /usr/local/bin/emacs /Applications
+ln -sf /usr/local/Cellar/emacs/24.5/Emacs.app /Applications/Emacs.app
 rm -rf ~/.emacs.d
 # Make sure your Github account has an SSH key generated and associated or the next line will not work
 git clone git@github.com:epxlabs/emacs-live.git ~/.emacs.d
