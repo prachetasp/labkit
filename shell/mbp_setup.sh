@@ -87,6 +87,10 @@ brew install awscli
 # Add profiles file to your lein directory
 git clone https://github.com/epxlabs/labkit/blob/master/.lein/profiles.clj ~/.lein
 
+# Install Docker
+curl -OL https://download.docker.com/mac/stable/Docker.dmg
+open Docker.dmg
+cp -r /Volumes/Docker/Docker.app /Applications/
 
 # OPTIONAL: UNCOMMENT IF YOU'D LIKE TO HAVE HTOP
 # brew install htop
