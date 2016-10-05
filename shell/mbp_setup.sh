@@ -11,9 +11,13 @@ sudo cp -r /Volumes/Google\ Chrome/Google\ Chrome.app /Applications/
 # Installs Git
 brew install git
 
-# Installs emacs
+# Installs emacs (last versions comented)
+# remove next string to unpin emacs version and setup last stable
+cp Formula/emacs.rb /usr/local/Homebrew/Library/Taps/homebrew/homebrew-core/Formula/emacs.rb
 brew install --with-cocoa emacs
-ln -sf /usr/local/Cellar/emacs/24.5/Emacs.app /Applications/Emacs.app
+# uncoment it when use last stable version
+# ln -sf /usr/local/Cellar/emacs/24.5/Emacs.app /Applications/Emacs.app
+
 rm -rf ~/.emacs.d
 # Make sure your Github account has an SSH key generated and associated or the next line will not work
 git clone git@github.com:epxlabs/emacs-live.git ~/.emacs.d
@@ -87,6 +91,10 @@ brew install awscli
 # Add profiles file to your lein directory
 git clone https://github.com/epxlabs/labkit/blob/master/.lein/profiles.clj ~/.lein
 
+# Install Docker
+curl -OL https://download.docker.com/mac/stable/Docker.dmg
+open Docker.dmg
+cp -r /Volumes/Docker/Docker.app /Applications/
 
 # OPTIONAL: UNCOMMENT IF YOU'D LIKE TO HAVE HTOP
 # brew install htop
